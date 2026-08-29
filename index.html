@@ -185,6 +185,20 @@
   .about-text{font-size:17px; color:var(--muted); max-width:720px;}
   .about-text strong{color:var(--text); font-weight:600;}
 
+  .about-grid{display:grid; grid-template-columns:1fr 260px; gap:44px; align-items:start;}
+  .about-photo{
+    position:relative; border-radius:14px; overflow:hidden;
+    border:1px solid var(--line); background:var(--panel-2);
+    box-shadow:0 20px 50px rgba(0,0,0,0.4);
+    transition:border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .about-photo::before{
+    content:''; position:absolute; top:0; left:0; right:0; height:3px; z-index:1;
+    background:linear-gradient(90deg, var(--amber), var(--teal));
+  }
+  .about-photo:hover{border-color:var(--line-glow); box-shadow:0 0 50px rgba(73,201,183,0.12);}
+  .about-photo img{display:block; width:100%; height:auto;}
+
   .exp-list{display:flex; flex-direction:column; gap:0;}
   .exp-item{
     display:grid; grid-template-columns:200px 1fr; gap:32px;
@@ -334,6 +348,8 @@
       width:38px; height:38px; border-radius:6px; font-family:var(--mono); cursor:pointer;
     }
     .exp-item, .edu-item{grid-template-columns:1fr; gap:8px;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-photo{max-width:280px; margin:8px auto 0;}
     .projects-grid{grid-template-columns:1fr;}
     .feature-list{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr; gap:32px;}
@@ -391,12 +407,19 @@
       <p class="eyebrow"><span class="prompt">$</span> cat about.md</p>
       <h2 class="section-title">About</h2>
     </div>
-    <p class="about-text reveal">
-      I'm a <strong>Bachelor of Information Technology</strong> graduate (Cyber Security major, Deakin University) with hands-on fullstack development experience across <strong>React, Node.js, SQL, Vue, and JavaScript</strong>. I founded <strong>NetForgeSols</strong>, where I design and deliver responsive business websites end-to-end, and I'm currently leading development of <strong>Travel with Chamru</strong> — a full-featured client travel planning web app with AI-powered itinerary generation, authentication, and automated notifications.
-    </p>
-    <p class="about-text reveal" style="margin-top:16px;">
-      I pair practical software development with a security-first mindset from penetration-testing coursework — Burp Suite, OWASP ZAP, Metasploit — plus business analysis experience gathering requirements and supporting UAT on live ICT projects. I pick up new frameworks fast and enjoy the part where something breaks and I have to work out why.
-    </p>
+    <div class="about-grid">
+      <div>
+        <p class="about-text reveal">
+          I'm a <strong>Bachelor of Information Technology</strong> graduate (Cyber Security major, Deakin University) with hands-on fullstack development experience across <strong>React, Node.js, SQL, Vue, and JavaScript</strong>. I founded <strong>NetForgeSols</strong>, where I design and deliver responsive business websites end-to-end, and I'm currently leading development of <strong>Travel with Chamru</strong> — a full-featured client travel planning web app with AI-powered itinerary generation, authentication, and automated notifications.
+        </p>
+        <p class="about-text reveal" style="margin-top:16px;">
+          I pair practical software development with a security-first mindset from penetration-testing coursework — Burp Suite, OWASP ZAP, Metasploit — plus business analysis experience gathering requirements and supporting UAT on live ICT projects. I pick up new frameworks fast and enjoy the part where something breaks and I have to work out why.
+        </p>
+      </div>
+      <div class="about-photo reveal">
+        <img src="assets/profile.jpg" alt="Sehandu Kurukularatne" width="760" height="1686" loading="lazy">
+      </div>
+    </div>
   </section>
 
   <section id="experience">
