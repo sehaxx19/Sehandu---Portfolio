@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sehandu Kurukularatne — Fullstack Developer &amp; Cyber Security</title>
 <meta name="description" content="Portfolio of Sehandu Kurukularatne — Fullstack developer and cyber security graduate. Founder of NetForgeSols.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080A10'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='17' font-weight='700' text-anchor='middle' fill='%2349C9B7'%3E%3E_%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sehandu Kurukularatne — Fullstack Developer &amp; Cyber Security">
+<meta property="og:description" content="Fullstack developer and cyber security graduate. Founder of NetForgeSols.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sehandu Kurukularatne — Fullstack Developer &amp; Cyber Security">
+<meta name="twitter:description" content="Fullstack developer and cyber security graduate. Founder of NetForgeSols.">
+<meta name="twitter:image" content="assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -660,8 +671,6 @@
       var i = 0;
       function step(){
         var shown = text.slice(0, i);
-        var body = shown.startsWith('>') ? '<span class="k">&gt;</span>'+shown.slice(1) : shown;
-        p.innerHTML = '<span class="v">'+body.replace('<span class="k">&gt;</span>','')+'</span>';
         p.innerHTML = shown.startsWith('>') ? '<span class="k">&gt;</span><span class="v">'+shown.slice(1)+'</span><span class="cursor"></span>' : shown;
         i++;
         if(i <= text.length){ setTimeout(step, 26); }
@@ -808,11 +817,10 @@
         ctx.fillStyle = 'rgba(233,236,244,0.45)';
         ctx.fill();
       }
-      requestAnimationFrame(frame);
+      if(!reduceMotion){ requestAnimationFrame(frame); }
     }
     resize();
-    if(!reduceMotion){ frame(); }
-    else { frame(); } // draw static frame once even with reduced motion
+    frame(); // always draw one frame; reduced motion stops it from looping
   })();
 
   /* ---------- interactive terminal ---------- */
