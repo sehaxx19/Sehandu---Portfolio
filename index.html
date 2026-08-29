@@ -157,15 +157,16 @@
   }
   @keyframes blink{0%,100%{opacity:1;} 50%{opacity:0;}}
 
-  .hero-identity{display:flex; align-items:center; gap:32px; flex-wrap:wrap; margin-bottom:18px;}
+  .hero-row{display:flex; align-items:center; gap:56px;}
+  .hero-main{flex:1; min-width:0;}
   .hero-avatar{
-    width:180px; height:180px; border-radius:50%; object-fit:cover; flex-shrink:0;
-    border:2px solid var(--line-glow); order:2;
+    width:280px; height:280px; border-radius:50%; object-fit:cover; flex-shrink:0;
+    border:2px solid var(--line-glow);
     box-shadow:0 0 0 4px rgba(8,10,16,0.6), 0 10px 30px rgba(0,0,0,0.45);
   }
   h1.hero-title{
     font-family:var(--sans); font-weight:800; font-size:clamp(38px,6vw,66px);
-    line-height:1.03; margin:0; letter-spacing:-0.02em;
+    line-height:1.03; margin:0 0 18px; letter-spacing:-0.02em;
   }
   h1.hero-title .accent{color:var(--amber); text-shadow:0 0 30px rgba(240,168,87,0.35);}
   .hero-sub{ font-size:19px; color:var(--muted); max-width:560px; margin:0 0 36px; }
@@ -339,7 +340,8 @@
       display:block; background:none; border:1px solid var(--line); color:var(--text);
       width:38px; height:38px; border-radius:6px; font-family:var(--mono); cursor:pointer;
     }
-    .hero-avatar{width:110px; height:110px;}
+    .hero-row{flex-direction:column-reverse; gap:28px;}
+    .hero-avatar{width:150px; height:150px;}
     .exp-item, .edu-item{grid-template-columns:1fr; gap:8px;}
     .projects-grid{grid-template-columns:1fr;}
     .feature-list{grid-template-columns:1fr;}
@@ -378,21 +380,23 @@
 <main class="wrap" id="top">
 
   <section class="hero" style="border-top:none;">
-    <div class="terminal" role="img" aria-label="Terminal output introducing Sehandu Kurukularatne">
-      <p class="tline"><span class="k">$</span> <span class="v">whoami</span></p>
-      <div id="typedBlock"></div>
-    </div>
-    <div class="hero-identity reveal">
-      <img class="hero-avatar" src="assets/profile.jpg" alt="Sehandu Kurukularatne" width="480" height="480" loading="eager">
-      <h1 class="hero-title">Sehandu<br>Kurukularatne<span class="accent">.</span></h1>
-    </div>
-    <p class="hero-sub reveal">
-      I build web applications with <strong>React, Node.js and SQL</strong> — then think like an attacker to make sure they hold up. Cyber Security graduate, founder of <strong>NetForgeSols</strong>, currently building a full-stack travel planning platform for a client in Sri Lanka.
-    </p>
-    <div class="hero-ctas reveal">
-      <a href="#projects" class="btn btn-primary">View projects</a>
-      <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download résumé</a>
-      <a href="#terminal" class="btn btn-ghost">Try the terminal →</a>
+    <div class="hero-row">
+      <div class="hero-main">
+        <div class="terminal" role="img" aria-label="Terminal output introducing Sehandu Kurukularatne">
+          <p class="tline"><span class="k">$</span> <span class="v">whoami</span></p>
+          <div id="typedBlock"></div>
+        </div>
+        <h1 class="hero-title reveal">Sehandu<br>Kurukularatne<span class="accent">.</span></h1>
+        <p class="hero-sub reveal">
+          I build web applications with <strong>React, Node.js and SQL</strong> — then think like an attacker to make sure they hold up. Cyber Security graduate, founder of <strong>NetForgeSols</strong>, currently building a full-stack travel planning platform for a client in Sri Lanka.
+        </p>
+        <div class="hero-ctas reveal">
+          <a href="#projects" class="btn btn-primary">View projects</a>
+          <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download résumé</a>
+          <a href="#terminal" class="btn btn-ghost">Try the terminal →</a>
+        </div>
+      </div>
+      <img class="hero-avatar reveal" src="assets/profile.jpg" alt="Sehandu Kurukularatne" width="480" height="480" loading="eager">
     </div>
   </section>
 
