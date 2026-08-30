@@ -225,6 +225,12 @@
     display:inline-block; margin-bottom:16px; letter-spacing:0.03em;
   }
   .tag-live .dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--teal); margin-right:6px;}
+  .tag-company{
+    font-family:var(--mono); font-size:11px; color:var(--amber);
+    border:1px solid rgba(240,168,87,0.4); padding:4px 10px; border-radius:20px;
+    display:inline-block; margin-bottom:16px; letter-spacing:0.03em;
+  }
+  .tag-company .dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--amber); margin-right:6px;}
   .project-featured-head{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;}
   .proj-link{
     font-family:var(--mono); font-size:13px; color:var(--teal); text-decoration:none;
@@ -498,13 +504,25 @@
       </ul>
     </div>
 
-    <div class="projects-grid">
-      <div class="project-card tilt reveal">
-        <h4>NetForgeSols Website</h4>
-        <p class="org">netforgesols.com · Jul 2026</p>
-        <p>Designed and developed the company's own site with responsive layouts and modern UI, optimized across desktop and mobile.</p>
-        <div class="stack"><span class="chip">HTML/CSS/JS</span></div>
+    <div class="project-featured reveal">
+      <div class="project-featured-head">
+        <span class="tag-company"><span class="dot"></span>company · founder</span>
+        <a href="https://netforgesols.com" target="_blank" rel="noopener" class="proj-link">netforgesols.com ↗</a>
       </div>
+      <h3>NetForgeSols</h3>
+      <p class="proj-desc">A web development studio I founded, delivering responsive business websites end-to-end for clients — from initial requirements through design, deployment, and ongoing support.</p>
+      <div class="stack">
+        <span class="chip">HTML/CSS/JS</span><span class="chip">React</span><span class="chip">Node.js</span>
+      </div>
+      <ul class="feature-list">
+        <li>Direct client collaboration — turning business ideas into functional, responsive web solutions</li>
+        <li>End-to-end project ownership: planning, design, deployment, and ongoing support</li>
+        <li>Designed and built the company's own site, netforgesols.com</li>
+        <li>Exploring AI-powered tools and automation to improve client workflows</li>
+      </ul>
+    </div>
+
+    <div class="projects-grid">
       <div class="project-card tilt reveal">
         <h4>App Attack — Pentesting Capstone</h4>
         <p class="org">Deakin University</p>
