@@ -400,7 +400,7 @@
         </div>
         <h1 class="hero-title reveal">Sehandu<br>Kurukularatne<span class="accent">.</span></h1>
         <p class="hero-sub reveal">
-          I build web applications with <strong>React, Node.js and SQL</strong> — then think like an attacker to make sure they hold up. Cyber Security graduate, founder of <strong>NetForgeSols</strong>, and builder of a full-stack travel planning platform live at <a href="https://travelwithchamru.com" target="_blank" rel="noopener" style="color:var(--teal);">travelwithchamru.com</a>.
+          I build web applications with <strong>React, Next.js and SQL</strong> — then think like an attacker to make sure they hold up. Cyber Security graduate, founder of <strong>NetForgeSols</strong>, and builder of a full-stack travel planning platform live at <a href="https://travelwithchamru.com" target="_blank" rel="noopener" style="color:var(--teal);">travelwithchamru.com</a>.
         </p>
         <div class="hero-ctas reveal">
           <a href="#projects" class="btn btn-primary">View projects</a>
@@ -418,7 +418,7 @@
       <h2 class="section-title">About</h2>
     </div>
     <p class="about-text reveal">
-      I'm a <strong>Bachelor of Information Technology</strong> graduate (Cyber Security major, Deakin University) with hands-on fullstack development experience across <strong>React, Node.js, SQL, Vue, and JavaScript</strong>. I founded <strong>NetForgeSols</strong>, where I design and deliver responsive business websites end-to-end, and I led development of <strong>Travel with Chamru</strong> — a full-featured client travel planning web app with AI-powered itinerary generation, authentication, and automated notifications, now live at <a href="https://travelwithchamru.com" target="_blank" rel="noopener" style="color:var(--teal);">travelwithchamru.com</a>.
+      I'm a <strong>Bachelor of Information Technology</strong> graduate (Cyber Security major, Deakin University) with hands-on fullstack development experience across <strong>React, Next.js, Node.js, SQL, Vue, and JavaScript</strong>. I founded <strong>NetForgeSols</strong>, where I design and deliver responsive business websites end-to-end, and I led development of <strong>Travel with Chamru</strong> — a completed, full-featured client travel planning web app built with Next.js, Prisma, and Neon Postgres, with AI-powered itinerary generation, authentication, and an admin dashboard, now live at <a href="https://travelwithchamru.com" target="_blank" rel="noopener" style="color:var(--teal);">travelwithchamru.com</a>.
     </p>
     <p class="about-text reveal" style="margin-top:16px;">
       I pair practical software development with a security-first mindset from penetration-testing coursework — Burp Suite, OWASP ZAP, Metasploit — plus business analysis experience gathering requirements and supporting UAT on live ICT projects. I pick up new frameworks fast and enjoy the part where something breaks and I have to work out why.
@@ -490,17 +490,17 @@
         <a href="https://travelwithchamru.com" target="_blank" rel="noopener" class="proj-link">travelwithchamru.com ↗</a>
       </div>
       <h3>Travel with Chamru</h3>
-      <p class="proj-desc">A responsive, mobile-first travel planning platform for a Sri Lankan travel client — 16+ pages including itineraries, destinations, packages, and gallery, built from custom UI/UX designs.</p>
+      <p class="proj-desc">A completed, responsive, mobile-first travel planning platform for a Sri Lankan travel client — 16+ pages including itineraries, destinations, packages, and gallery, built from custom UI/UX designs.</p>
       <div class="stack">
-        <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">MySQL / PostgreSQL</span>
+        <span class="chip">Next.js</span><span class="chip">Prisma ORM</span><span class="chip">Neon Postgres</span><span class="chip">Tailwind CSS</span><span class="chip">Anthropic API</span>
       </div>
       <ul class="feature-list">
         <li>"Build Your Own Itinerary" tool — filter by date, travelers, interests, budget, plotted on an interactive Sri Lanka map</li>
-        <li>AI-powered chatbot that generates itineraries from natural-language prompts</li>
-        <li>Customer/admin authentication with document upload for itinerary attachments</li>
-        <li>Downloadable PDF itineraries</li>
-        <li>Automated email notifications triggered on inquiry submission</li>
+        <li>AI-powered chatbot (Anthropic API) that generates personalized itineraries from natural-language prompts</li>
+        <li>Customer/admin authentication (NextAuth) with an admin dashboard for managing inquiries and content</li>
+        <li>Inquiry and itinerary-builder workflows backed by Neon Postgres via Prisma ORM</li>
         <li>Tour packages, vehicle showcase, guest reviews, live weather widget, FAQ hub</li>
+        <li>Full SEO pass — metadata, dynamic sitemap, robots.txt, JSON-LD, and Open Graph/Twitter cards</li>
       </ul>
     </div>
 
@@ -565,9 +565,9 @@
       <div class="skill-group">
         <span class="skill-key">"languages_and_frameworks"<span class="quote">:</span></span>
         <div class="skill-tags">
-          <span class="skill-tag">React.js</span><span class="skill-tag">Node.js</span><span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React.js</span><span class="skill-tag">Next.js</span><span class="skill-tag">Node.js</span><span class="skill-tag">JavaScript</span>
           <span class="skill-tag">Vue.js</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span>
-          <span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">SQL (MySQL/PostgreSQL)</span>
+          <span class="skill-tag">Python</span><span class="skill-tag">C++</span><span class="skill-tag">SQL (MySQL/PostgreSQL)</span><span class="skill-tag">Prisma ORM</span>
         </div>
       </div>
       <div class="skill-group">
@@ -871,7 +871,7 @@
         line('Builds with React / Node.js / SQL. Breaks things on purpose with Burp Suite & OWASP ZAP.');
       },
       skills: function(){
-        line('languages : React.js, Node.js, JavaScript, Vue.js, HTML, CSS, Python, C++, SQL');
+        line('languages : React.js, Next.js, Node.js, JavaScript, Vue.js, HTML, CSS, Python, C++, SQL, Prisma ORM');
         line('security  : Burp Suite, OWASP ZAP, Metasploit, Wireshark, Cisco Packet Tracer');
         line('tools     : Linux, Git, GitHub, Trello, Asana');
       },
@@ -881,7 +881,7 @@
         line('2023      IT Support Intern — Gtec-Solution, Melbourne');
       },
       projects: function(){
-        line('travel-with-chamru/  — AI itinerary planner, React + Node + SQL [live → travelwithchamru.com]');
+        line('travel-with-chamru/  — AI itinerary planner, Next.js + Prisma + Neon Postgres [live → travelwithchamru.com]');
         line('netforgesols.com/    — company site');
         line('app-attack/          — pentesting capstone, Burp Suite + OWASP ZAP');
         line('type "help" for more, or scroll up to the projects section ↑');
