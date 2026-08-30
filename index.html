@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sehandu Kurukularatne — Fullstack Developer &amp; Cyber Security</title>
 <meta name="description" content="Portfolio of Sehandu Kurukularatne — Fullstack developer and cyber security graduate. Founder of NetForgeSols.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080A10'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='17' font-weight='700' text-anchor='middle' fill='%2349C9B7'%3E%3E_%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sehandu Kurukularatne — Fullstack Developer &amp; Cyber Security">
+<meta property="og:description" content="Fullstack developer and cyber security graduate. Founder of NetForgeSols.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sehandu Kurukularatne — Fullstack Developer &amp; Cyber Security">
+<meta name="twitter:description" content="Fullstack developer and cyber security graduate. Founder of NetForgeSols.">
+<meta name="twitter:image" content="assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -146,6 +157,13 @@
   }
   @keyframes blink{0%,100%{opacity:1;} 50%{opacity:0;}}
 
+  .hero-row{display:flex; align-items:center; gap:56px;}
+  .hero-main{flex:1; min-width:0;}
+  .hero-avatar{
+    width:280px; height:280px; border-radius:50%; object-fit:cover; flex-shrink:0;
+    border:2px solid var(--line-glow);
+    box-shadow:0 0 0 4px rgba(8,10,16,0.6), 0 10px 30px rgba(0,0,0,0.45);
+  }
   h1.hero-title{
     font-family:var(--sans); font-weight:800; font-size:clamp(38px,6vw,66px);
     line-height:1.03; margin:0 0 18px; letter-spacing:-0.02em;
@@ -201,12 +219,24 @@
     content:''; position:absolute; top:0; left:0; right:0; height:3px;
     background:linear-gradient(90deg, var(--amber), var(--teal));
   }
-  .tag-inprogress{
+  .tag-live{
+    font-family:var(--mono); font-size:11px; color:var(--teal);
+    border:1px solid rgba(73,201,183,0.4); padding:4px 10px; border-radius:20px;
+    display:inline-block; margin-bottom:16px; letter-spacing:0.03em;
+  }
+  .tag-live .dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--teal); margin-right:6px;}
+  .tag-company{
     font-family:var(--mono); font-size:11px; color:var(--amber);
     border:1px solid rgba(240,168,87,0.4); padding:4px 10px; border-radius:20px;
     display:inline-block; margin-bottom:16px; letter-spacing:0.03em;
   }
-  .tag-inprogress .dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--amber); margin-right:6px; animation:blink 1.4s step-end infinite;}
+  .tag-company .dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--amber); margin-right:6px;}
+  .project-featured-head{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  .proj-link{
+    font-family:var(--mono); font-size:13px; color:var(--teal); text-decoration:none;
+    margin-bottom:16px; transition:color 0.15s ease;
+  }
+  .proj-link:hover{color:var(--amber);}
   .project-featured h3{font-size:24px; margin:0 0 10px; font-weight:800;}
   .project-featured .proj-desc{color:var(--muted); font-size:15.5px; max-width:680px; margin-bottom:18px;}
   .stack{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px;}
@@ -322,6 +352,8 @@
       display:block; background:none; border:1px solid var(--line); color:var(--text);
       width:38px; height:38px; border-radius:6px; font-family:var(--mono); cursor:pointer;
     }
+    .hero-row{flex-direction:column-reverse; gap:28px;}
+    .hero-avatar{width:150px; height:150px;}
     .exp-item, .edu-item{grid-template-columns:1fr; gap:8px;}
     .projects-grid{grid-template-columns:1fr;}
     .feature-list{grid-template-columns:1fr;}
@@ -360,18 +392,23 @@
 <main class="wrap" id="top">
 
   <section class="hero" style="border-top:none;">
-    <div class="terminal" role="img" aria-label="Terminal output introducing Sehandu Kurukularatne">
-      <p class="tline"><span class="k">$</span> <span class="v">whoami</span></p>
-      <div id="typedBlock"></div>
-    </div>
-    <h1 class="hero-title reveal">Sehandu<br>Kurukularatne<span class="accent">.</span></h1>
-    <p class="hero-sub reveal">
-      I build web applications with <strong>React, Node.js and SQL</strong> — then think like an attacker to make sure they hold up. Cyber Security graduate, founder of <strong>NetForgeSols</strong>, currently building a full-stack travel planning platform for a client in Sri Lanka.
-    </p>
-    <div class="hero-ctas reveal">
-      <a href="#projects" class="btn btn-primary">View projects</a>
-      <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download résumé</a>
-      <a href="#terminal" class="btn btn-ghost">Try the terminal →</a>
+    <div class="hero-row">
+      <div class="hero-main">
+        <div class="terminal" role="img" aria-label="Terminal output introducing Sehandu Kurukularatne">
+          <p class="tline"><span class="k">$</span> <span class="v">whoami</span></p>
+          <div id="typedBlock"></div>
+        </div>
+        <h1 class="hero-title reveal">Sehandu<br>Kurukularatne<span class="accent">.</span></h1>
+        <p class="hero-sub reveal">
+          I build web applications with <strong>React, Node.js and SQL</strong> — then think like an attacker to make sure they hold up. Cyber Security graduate, founder of <strong>NetForgeSols</strong>, and builder of a full-stack travel planning platform live at <a href="https://travelwithchamru.com" target="_blank" rel="noopener" style="color:var(--teal);">travelwithchamru.com</a>.
+        </p>
+        <div class="hero-ctas reveal">
+          <a href="#projects" class="btn btn-primary">View projects</a>
+          <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download résumé</a>
+          <a href="#terminal" class="btn btn-ghost">Try the terminal →</a>
+        </div>
+      </div>
+      <img class="hero-avatar reveal" src="assets/profile.jpg" alt="Sehandu Kurukularatne" width="480" height="480" loading="eager">
     </div>
   </section>
 
@@ -381,7 +418,7 @@
       <h2 class="section-title">About</h2>
     </div>
     <p class="about-text reveal">
-      I'm a <strong>Bachelor of Information Technology</strong> graduate (Cyber Security major, Deakin University) with hands-on fullstack development experience across <strong>React, Node.js, SQL, Vue, and JavaScript</strong>. I founded <strong>NetForgeSols</strong>, where I design and deliver responsive business websites end-to-end, and I'm currently leading development of <strong>Travel with Chamru</strong> — a full-featured client travel planning web app with AI-powered itinerary generation, authentication, and automated notifications.
+      I'm a <strong>Bachelor of Information Technology</strong> graduate (Cyber Security major, Deakin University) with hands-on fullstack development experience across <strong>React, Node.js, SQL, Vue, and JavaScript</strong>. I founded <strong>NetForgeSols</strong>, where I design and deliver responsive business websites end-to-end, and I led development of <strong>Travel with Chamru</strong> — a full-featured client travel planning web app with AI-powered itinerary generation, authentication, and automated notifications, now live at <a href="https://travelwithchamru.com" target="_blank" rel="noopener" style="color:var(--teal);">travelwithchamru.com</a>.
     </p>
     <p class="about-text reveal" style="margin-top:16px;">
       I pair practical software development with a security-first mindset from penetration-testing coursework — Burp Suite, OWASP ZAP, Metasploit — plus business analysis experience gathering requirements and supporting UAT on live ICT projects. I pick up new frameworks fast and enjoy the part where something breaks and I have to work out why.
@@ -448,7 +485,10 @@
     </div>
 
     <div class="project-featured reveal">
-      <span class="tag-inprogress"><span class="dot"></span>in progress</span>
+      <div class="project-featured-head">
+        <span class="tag-live"><span class="dot"></span>live</span>
+        <a href="https://travelwithchamru.com" target="_blank" rel="noopener" class="proj-link">travelwithchamru.com ↗</a>
+      </div>
       <h3>Travel with Chamru</h3>
       <p class="proj-desc">A responsive, mobile-first travel planning platform for a Sri Lankan travel client — 16+ pages including itineraries, destinations, packages, and gallery, built from custom UI/UX designs.</p>
       <div class="stack">
@@ -464,13 +504,25 @@
       </ul>
     </div>
 
-    <div class="projects-grid">
-      <div class="project-card tilt reveal">
-        <h4>NetForgeSols Website</h4>
-        <p class="org">netforgesols.com · Jul 2026</p>
-        <p>Designed and developed the company's own site with responsive layouts and modern UI, optimized across desktop and mobile.</p>
-        <div class="stack"><span class="chip">HTML/CSS/JS</span></div>
+    <div class="project-featured reveal">
+      <div class="project-featured-head">
+        <span class="tag-company"><span class="dot"></span>company · founder</span>
+        <a href="https://netforgesols.com" target="_blank" rel="noopener" class="proj-link">netforgesols.com ↗</a>
       </div>
+      <h3>NetForgeSols</h3>
+      <p class="proj-desc">A web development studio I founded, delivering responsive business websites end-to-end for clients — from initial requirements through design, deployment, and ongoing support.</p>
+      <div class="stack">
+        <span class="chip">HTML/CSS/JS</span><span class="chip">React</span><span class="chip">Node.js</span>
+      </div>
+      <ul class="feature-list">
+        <li>Direct client collaboration — turning business ideas into functional, responsive web solutions</li>
+        <li>End-to-end project ownership: planning, design, deployment, and ongoing support</li>
+        <li>Designed and built the company's own site, netforgesols.com</li>
+        <li>Exploring AI-powered tools and automation to improve client workflows</li>
+      </ul>
+    </div>
+
+    <div class="projects-grid">
       <div class="project-card tilt reveal">
         <h4>App Attack — Pentesting Capstone</h4>
         <p class="org">Deakin University</p>
@@ -641,7 +693,7 @@
     var lines = [
       "> fullstack developer × cyber security",
       "> based in Colombo, Sri Lanka",
-      "> currently building: Travel with Chamru"
+      "> live: Travel with Chamru — travelwithchamru.com"
     ];
     if(reduceMotion){
       lines.forEach(function(t){
@@ -660,8 +712,6 @@
       var i = 0;
       function step(){
         var shown = text.slice(0, i);
-        var body = shown.startsWith('>') ? '<span class="k">&gt;</span>'+shown.slice(1) : shown;
-        p.innerHTML = '<span class="v">'+body.replace('<span class="k">&gt;</span>','')+'</span>';
         p.innerHTML = shown.startsWith('>') ? '<span class="k">&gt;</span><span class="v">'+shown.slice(1)+'</span><span class="cursor"></span>' : shown;
         i++;
         if(i <= text.length){ setTimeout(step, 26); }
@@ -808,11 +858,10 @@
         ctx.fillStyle = 'rgba(233,236,244,0.45)';
         ctx.fill();
       }
-      requestAnimationFrame(frame);
+      if(!reduceMotion){ requestAnimationFrame(frame); }
     }
     resize();
-    if(!reduceMotion){ frame(); }
-    else { frame(); } // draw static frame once even with reduced motion
+    frame(); // always draw one frame; reduced motion stops it from looping
   })();
 
   /* ---------- interactive terminal ---------- */
@@ -860,7 +909,7 @@
         line('2023      IT Support Intern — Gtec-Solution, Melbourne');
       },
       projects: function(){
-        line('travel-with-chamru/  — AI itinerary planner, React + Node + SQL [in progress]');
+        line('travel-with-chamru/  — AI itinerary planner, React + Node + SQL [live → travelwithchamru.com]');
         line('netforgesols.com/    — company site');
         line('app-attack/          — pentesting capstone, Burp Suite + OWASP ZAP');
         line('type "help" for more, or scroll up to the projects section ↑');
